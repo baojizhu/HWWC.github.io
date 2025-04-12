@@ -2,11 +2,25 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background-color: #f4f4f4;
-  background-image: url('logo.png'); /* 替换为您的图片路径 */
+  position: relative; /* 为伪元素定位 */
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/logo.png'); /* 替换为您的图片路径 */
   background-size: cover; /* 确保图片覆盖整个背景 */
   background-repeat: no-repeat; /* 防止图片重复 */
   background-attachment: fixed; /* 固定背景图片 */
   background-position: center; /* 居中显示背景图片 */
+  opacity: 0.1; /* 设置透明度为 10% */
+  z-index: -1; /* 确保背景图片在内容后面 */
 }
 
 h1 {
@@ -16,13 +30,20 @@ h1 {
 .gallery {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
+  flex-wrap: wrap; /* 允许换行 */
+  gap: 10px; /* 图片之间的间距 */
   margin-top: 20px;
 }
 
+.gallery figure {
+  flex: 1 1 calc(25% - 20px); /* 每行最多四个，减去间距 */
+  box-sizing: border-box; /* 包括内边距和边框 */
+  text-align: center;
+  margin: 0;
+}
+
 .gallery img {
-  width: 200px;
+  width: 80%; /* 图片宽度占满父容器 */
   height: auto;
   border: 2px solid #ccc;
   border-radius: 5px;
@@ -32,4 +53,41 @@ h1 {
 .gallery img:hover {
   transform: scale(1.1);
   border-color: #333;
+}
+.modal {
+  display: none; /* 默认隐藏 */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明背景 */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid #fff;
+  border-radius: 5px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #ccc;
+  text-decoration: none;
+  cursor: pointer;
 }

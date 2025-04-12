@@ -6,60 +6,78 @@
   <title>浩维文创</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  function openModal(image) {
+    const modal = document.getElementById("imageModal");
+    const modalImage = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImage.src = image.src; // 设置模态框中的图片为点击的图片
+  }
+
+  function closeModal() {
+    const modal = document.getElementById("imageModal");
+    modal.style.display = "none";
+  }
+</script>
 <body>
   <header>
-    <img src="images/log.png" alt="网站Logo" class="logo">
+    <img src="images/logo.png" alt="网站Logo" class="logo">
   </header>
   <h1>浩维文创产品展示</h1>
   <div class="gallery">
     <figure>
-      <img src="images/image1.jpg" alt="图片1">
-      <figcaption>产品1：精美艺术品精美艺术品精美艺术品</figcaption>
+      <img src="images/image1.jpg" alt="图片1" onclick="openModal(this)">
+      <figcaption>产品1：精美艺术品</figcaption>
     </figure>
     <figure>
-      <img src="images/image2.jpg" alt="图片2">
+      <img src="images/image2.jpg" alt="图片2" onclick="openModal(this)">
       <figcaption>产品2：创意设计品</figcaption>
     </figure>
     <figure>
-      <img src="images/image3.jpg" alt="图片3">
+      <img src="images/image3.jpg" alt="图片3" onclick="openModal(this)">
       <figcaption>产品3：独特手工艺品</figcaption>
     </figure>
     <figure>
-      <img src="images/image4.jpg" alt="图片4">
+      <img src="images/image4.jpg" alt="图片4" onclick="openModal(this)">
       <figcaption>产品4：手工艺品</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
     <figure>
-      <img src="images/image5.jpg" alt="图片5">
+      <img src="images/image5.jpg" alt="图片5" onclick="openModal(this)">
       <figcaption>产品5：艺术设计</figcaption>
     </figure>
   </div>
+
+  <!-- 模态框 -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
 </body>
-</html>
