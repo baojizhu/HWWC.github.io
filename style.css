@@ -40,13 +40,15 @@ h1 {
   box-sizing: border-box; /* 包括内边距和边框 */
   text-align: center;
   margin: 0;
+  aspect-ratio: 1 / 1; /* 设置宽高比为 1:1，确保框大小一致 */
 }
 
 .gallery img {
-  width: 80%; /* 图片宽度占满父容器 */
-  height: auto;
+  width: 100%; /* 图片宽度占满父容器 */
+  height: 100%; /* 图片高度占满父容器 */
   border: 2px solid #ccc;
   border-radius: 5px;
+  object-fit: cover; /* 确保图片内容不会被拉伸 */
   transition: transform 0.3s;
 }
 
